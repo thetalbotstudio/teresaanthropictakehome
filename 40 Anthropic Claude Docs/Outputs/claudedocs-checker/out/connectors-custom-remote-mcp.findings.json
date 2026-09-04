@@ -1,0 +1,199 @@
+{
+  "meta": {
+    "url": "https://claude.com/docs/connectors/custom/remote-mcp",
+    "source": "local file snapshots/connectors-custom-remote-mcp.md",
+    "run_at": "2026-09-04T00:54:30+00:00",
+    "checker_version": "0.1.0",
+    "standard": "TeresaTalbot_Phase2_01StyleGuideExcerpt.md",
+    "front_matter": {},
+    "stats": {
+      "headings": 17,
+      "steps": 21,
+      "tabs": [],
+      "callouts": 3,
+      "code_blocks_removed": 0
+    }
+  },
+  "findings": [
+    {
+      "id": "T1a",
+      "rule": "H1 is 70 characters or fewer",
+      "class": "deterministic",
+      "severity": "mandatory",
+      "status": "pass",
+      "location": "line 1",
+      "evidence": "38 chars: 'Third party connectors with remote MCP'",
+      "fix": "Shorten the H1 to one imperative verb and one object."
+    },
+    {
+      "id": "T1b",
+      "rule": "H1 begins with an imperative verb",
+      "class": "heuristic",
+      "severity": "mandatory",
+      "status": "needs-review",
+      "location": "line 1",
+      "evidence": "first word 'third'",
+      "fix": "Start the H1 with the verb that names the job."
+    },
+    {
+      "id": "T2a",
+      "rule": "First paragraph is 45 words or fewer",
+      "class": "deterministic",
+      "severity": "mandatory",
+      "status": "pass",
+      "location": "first paragraph after H1",
+      "evidence": "21 words: 'Custom connectors enable you to link Claude directly to your essential tools and data sources using the Model Context Protocol (MCP).'\u2026",
+      "fix": "Open with one paragraph of 45 words or fewer that states the observable result."
+    },
+    {
+      "id": "T2b",
+      "rule": "First paragraph describes the observable result",
+      "class": "judgment",
+      "severity": "mandatory",
+      "status": "pending",
+      "location": "first paragraph after H1",
+      "evidence": "Custom connectors enable you to link Claude directly to your essential tools and data sources using the Model Context Protocol (MCP).",
+      "fix": "Rewrite the opening around the result the reader will see."
+    },
+    {
+      "id": "T3",
+      "rule": "Front matter contains exactly one value for each required key",
+      "class": "deterministic",
+      "severity": "mandatory",
+      "status": "fail",
+      "location": "front matter",
+      "evidence": "missing: ['content_type', 'object_type', 'owner_team', 'supported_surfaces', 'status', 'last_reviewed', 'canonical_url', 'next_action'] (no YAML front matter at all)",
+      "fix": "Add typed front matter: content_type, object_type, owner_team, supported_surfaces, status, last_reviewed, canonical_url, next_action."
+    },
+    {
+      "id": "T4",
+      "rule": "At a glance block appears before the first H2 with exactly Audience, Prerequisites, Outcome",
+      "class": "deterministic",
+      "severity": "mandatory",
+      "status": "fail",
+      "location": "before first H2",
+      "evidence": "no 'At a glance' block found",
+      "fix": "Add a blockquote 'At a glance' with exactly Audience, Prerequisites, and Outcome."
+    },
+    {
+      "id": "T5",
+      "rule": "Before you begin appears before the first numbered procedure",
+      "class": "deterministic",
+      "severity": "mandatory",
+      "status": "fail",
+      "location": "first step at line 30",
+      "evidence": "no 'Before you begin' H2",
+      "fix": "Add a Before you begin section listing roles, access, and inputs the reader needs."
+    },
+    {
+      "id": "T6a",
+      "rule": "Step begins with an imperative verb",
+      "class": "heuristic",
+      "severity": "mandatory",
+      "status": "needs-review",
+      "location": "For Team and Enterprise plans step 4 (line 33)",
+      "evidence": "first word 'optionally': Optionally configure OAuth Client ID/Secret in Advanced settings",
+      "fix": "Confirm the first word is an imperative verb."
+    },
+    {
+      "id": "T6a",
+      "rule": "Step begins with an imperative verb",
+      "class": "heuristic",
+      "severity": "mandatory",
+      "status": "needs-review",
+      "location": "For Free, Pro, and Max plans step 4 (line 49)",
+      "evidence": "first word 'optionally': Optionally configure OAuth credentials",
+      "fix": "Confirm the first word is an imperative verb."
+    },
+    {
+      "id": "T6a",
+      "rule": "Step begins with an imperative verb",
+      "class": "heuristic",
+      "severity": "mandatory",
+      "status": "fail",
+      "location": "Adding a request header step 1 (line 94)",
+      "evidence": "In the Add custom connector dialog, open **Request headers**.",
+      "fix": "Start the step with the action verb."
+    },
+    {
+      "id": "T6b",
+      "rule": "Step contains no more than one primary action",
+      "class": "heuristic",
+      "severity": "mandatory",
+      "status": "fail",
+      "location": "Adding a request header step 5 (line 98)",
+      "evidence": "second action ['click']: 'Repeat for any additional headers your server needs (you can add up to four), then click **Add**.'",
+      "fix": "Split into one step per action, or demote the second clause to a result sentence."
+    },
+    {
+      "id": "T7",
+      "rule": "Product, plan, organization, or surface differences appear under Product-specific after the shared procedure",
+      "class": "heuristic",
+      "severity": "advisory",
+      "status": "fail",
+      "location": "document",
+      "evidence": "conditional content without a Product-specific heading \u2014 tabs: [], markers: ['Organization settings']",
+      "fix": "Move plan/org/surface conditions under a Product-specific heading; keep the shared procedure unconditional."
+    },
+    {
+      "id": "T8",
+      "rule": "Security and permissions section states what access is granted and how to remove it",
+      "class": "deterministic",
+      "severity": "mandatory",
+      "status": "fail",
+      "location": "document",
+      "evidence": "page reads data / installs / handles credentials (['api key', 'credential', 'deploy', 'oauth', 'permission', 'secret']) but has no 'Security and permissions' H2",
+      "fix": "Add a Security and permissions H2 that consolidates access granted, revocation, and removal."
+    },
+    {
+      "id": "T9",
+      "rule": "Troubleshooting contains a table with exactly Symptom, Check, Fix",
+      "class": "deterministic",
+      "severity": "mandatory",
+      "status": "fail",
+      "location": "document",
+      "evidence": "no 'Troubleshooting' H2",
+      "fix": "Add a Troubleshooting H2 with a Symptom | Check | Fix table."
+    },
+    {
+      "id": "T10",
+      "rule": "Exactly one H2 named Next steps; first link equals next_action; at most two more links",
+      "class": "deterministic",
+      "severity": "mandatory",
+      "status": "fail",
+      "location": "document",
+      "evidence": "0 'Next steps' H2 found",
+      "fix": "Add one Next steps H2 whose first link is next_action."
+    },
+    {
+      "id": "J1",
+      "rule": "Page helps a reader complete ONE observable job (task-contract-selected)",
+      "class": "judgment",
+      "severity": "mandatory",
+      "status": "pending",
+      "location": "document",
+      "evidence": "H2s: ['What are third party connectors?', 'Adding custom connectors', 'The Add custom connector dialog, field by field', 'Authenticating with request headers', 'Managing connectors', 'Security and privacy', 'Reporting issues', 'Related topics']",
+      "fix": "Split into one task page per job, or reclassify."
+    },
+    {
+      "id": "J2",
+      "rule": "Examples do not introduce a second object, alternate workflow, or unsupported capability",
+      "class": "judgment",
+      "severity": "advisory",
+      "status": "pending",
+      "location": "examples",
+      "evidence": "",
+      "fix": ""
+    },
+    {
+      "id": "J3",
+      "rule": "Heuristic T6 findings confirmed (imperative verb / one action per step)",
+      "class": "judgment",
+      "severity": "advisory",
+      "status": "pending",
+      "location": "steps",
+      "evidence": "",
+      "fix": ""
+    }
+  ]
+}

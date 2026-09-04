@@ -1,0 +1,6 @@
+[
+  {"id": "T2b", "status": "pass", "evidence": "'After this task, a remote MCP server of your choosing is registered in Claude as a custom connector, its sign-in method is set, and its tools can be turned on in a conversation.' States the end state, not coverage.", "fix": ""},
+  {"id": "J1", "status": "pass", "evidence": "H2s 'Add the connector' and 'Connect and turn on the connector' are two halves of one job (a custom connector that is usable in chat); 'Add a request header' is a conditional sub-procedure inside the same dialog. Concept content (what connectors are, finding connectors), field reference, and management moved out or into Security and permissions.", "fix": ""},
+  {"id": "J2", "status": "pass", "evidence": "Examples are the URL 'https://mcp.example.com/mcp' and the 'Bearer your-token' header value; both illustrate fields the reader fills in for this job. No second object or alternate workflow.", "fix": ""},
+  {"id": "J3", "status": "pass", "evidence": "0 confirmed, 0 rejected; no T6 flags were raised.", "fix": ""}
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "J1",
+    "status": "fail",
+    "evidence": "The page bundles at least three reader jobs. Set up (H2s 'Create a Tunnels API key', 'Deploy the tunnel stack', 'Verify the connection', 'Add tunneled servers as connectors') is one job with one outcome: a tunneled server reachable from Claude. 'Rotate credentials' is a maintain job with its own trigger (schedule or suspected exposure). 'Remove a tunnel' is a decommission job with a different reader state and an irreversible outcome. The page description confirms it: it lists six verbs.",
+    "fix": "Keep this page as 'Set up an MCP tunnel' ending at the first successful tool call; move 'Rotate credentials' and 'Remove a tunnel' to their own task pages under connectors/mcp-tunnels and link them from Next steps."
+  },
+  {
+    "id": "J2",
+    "status": "pass",
+    "evidence": "Examples stay inside the one job: the 'docs' and 'search' routes, the example URL 'https://docs.abc123.tunnel.anthropic.com/mcp', and the example tunnel domain all illustrate configuring and registering a route. No example introduces a second object type or a capability the page does not otherwise support.",
+    "fix": ""
+  },
+  {
+    "id": "J3",
+    "status": "fail",
+    "evidence": "1 confirmed, 2 rejected. Confirmed: 'Create a Tunnels API key' step 2 'Open **Tunnels API** and create a key' has two primary actions. Rejected: step 1 (line 15) and 'Add tunneled servers as connectors' step 1 (line 135) begin with the location phrase 'In claude.ai,' before a single imperative ('go to'); the rule intends one action per step, and a leading location qualifier does not add an action. The heuristic also MISSED two real violations because it only reads <Step title> text: Helm 'Install' body reads 'Read the Tunnels API key into an environment variable ... then install into a dedicated namespace', and Docker 'Provision the tunnel' body reads 'Read the Tunnels API key into an environment variable, then run the setup component.'",
+    "fix": "Allow a leading location phrase in T6a; extend T6b to the first sentence of a <Step> body, not only its title."
+  },
+  {
+    "id": "T2b",
+    "status": "fail",
+    "evidence": "The first paragraph describes coverage and prerequisites ('This page covers the full setup ... You need the Owner or Primary Owner role ...'), not the observable result. The Mintlify description blockquote above it is a list of six actions, also not an outcome.",
+    "fix": "Open with the result: 'After this task, members of your claude.ai Enterprise organization can use an MCP server inside your network as a custom connector, reached through a tunnel you control.'"
+  }
+]

@@ -1,0 +1,196 @@
+{
+  "meta": {
+    "url": "https://claude.com/docs/connectors/mcp-tunnels/setup",
+    "source": "local file snapshots/connectors-mcp-tunnels-setup.md",
+    "run_at": "2026-09-04T00:20:43+00:00",
+    "checker_version": "0.1.0",
+    "standard": "TeresaTalbot_Phase2_01StyleGuideExcerpt.md",
+    "front_matter": {},
+    "stats": {
+      "headings": 8,
+      "steps": 23,
+      "tabs": [
+        "Docker Compose",
+        "Helm"
+      ],
+      "callouts": 3,
+      "code_blocks_removed": 25
+    }
+  },
+  "findings": [
+    {
+      "id": "T1a",
+      "rule": "H1 is 70 characters or fewer",
+      "class": "deterministic",
+      "severity": "mandatory",
+      "status": "pass",
+      "location": "line 1",
+      "evidence": "20 chars: 'Set up an MCP tunnel'",
+      "fix": "Shorten the H1 to one imperative verb and one object."
+    },
+    {
+      "id": "T1b",
+      "rule": "H1 begins with an imperative verb",
+      "class": "heuristic",
+      "severity": "mandatory",
+      "status": "pass",
+      "location": "line 1",
+      "evidence": "first word 'set'",
+      "fix": "Start the H1 with the verb that names the job."
+    },
+    {
+      "id": "T2a",
+      "rule": "First paragraph is 45 words or fewer",
+      "class": "deterministic",
+      "severity": "mandatory",
+      "status": "fail",
+      "location": "first paragraph after H1",
+      "evidence": "74 words: 'This page covers the full setup of an MCP tunnel for a claude.ai Enterprise organization, from creating the API key that provisioning uses to members calling a '\u2026",
+      "fix": "Open with one paragraph of 45 words or fewer that states the observable result."
+    },
+    {
+      "id": "T2b",
+      "rule": "First paragraph describes the observable result",
+      "class": "judgment",
+      "severity": "mandatory",
+      "status": "fail",
+      "location": "first paragraph after H1",
+      "evidence": "The first paragraph describes coverage and prerequisites ('This page covers the full setup ... You need the Owner or Primary Owner role ...'), not the observable result. The Mintlify description blockquote above it is a list of six actions, also not an outcome.",
+      "fix": "Open with the result: 'After this task, members of your claude.ai Enterprise organization can use an MCP server inside your network as a custom connector, reached through a tunnel you control.'",
+      "judged_by": "judgment file judgment-results.json"
+    },
+    {
+      "id": "T3",
+      "rule": "Front matter contains exactly one value for each required key",
+      "class": "deterministic",
+      "severity": "mandatory",
+      "status": "fail",
+      "location": "front matter",
+      "evidence": "missing: ['content_type', 'object_type', 'owner_team', 'supported_surfaces', 'status', 'last_reviewed', 'canonical_url', 'next_action'] (no YAML front matter at all)",
+      "fix": "Add typed front matter: content_type, object_type, owner_team, supported_surfaces, status, last_reviewed, canonical_url, next_action."
+    },
+    {
+      "id": "T4",
+      "rule": "At a glance block appears before the first H2 with exactly Audience, Prerequisites, Outcome",
+      "class": "deterministic",
+      "severity": "mandatory",
+      "status": "fail",
+      "location": "before first H2",
+      "evidence": "no 'At a glance' block found",
+      "fix": "Add a blockquote 'At a glance' with exactly Audience, Prerequisites, and Outcome."
+    },
+    {
+      "id": "T5",
+      "rule": "Before you begin appears before the first numbered procedure",
+      "class": "deterministic",
+      "severity": "mandatory",
+      "status": "fail",
+      "location": "first step at line 15",
+      "evidence": "no 'Before you begin' H2",
+      "fix": "Add a Before you begin section listing roles, access, and inputs the reader needs."
+    },
+    {
+      "id": "T6a",
+      "rule": "Step begins with an imperative verb",
+      "class": "heuristic",
+      "severity": "mandatory",
+      "status": "fail",
+      "location": "Create a Tunnels API key step 1 (line 15)",
+      "evidence": "In claude.ai, go to **Organization settings > Tunnels**. This page appears once Anthropic has enabled MCP tunnels for your organization.",
+      "fix": "Start the step with the action verb."
+    },
+    {
+      "id": "T6b",
+      "rule": "Step contains no more than one primary action",
+      "class": "heuristic",
+      "severity": "mandatory",
+      "status": "fail",
+      "location": "Create a Tunnels API key step 2 (line 16)",
+      "evidence": "second action ['create']: 'Open **Tunnels API** and create a key.'",
+      "fix": "Split into one step per action, or demote the second clause to a result sentence."
+    },
+    {
+      "id": "T6a",
+      "rule": "Step begins with an imperative verb",
+      "class": "heuristic",
+      "severity": "mandatory",
+      "status": "fail",
+      "location": "Add tunneled servers as connectors step 1 (line 135)",
+      "evidence": "In claude.ai, go to **Organization settings > Connectors**.",
+      "fix": "Start the step with the action verb."
+    },
+    {
+      "id": "T7",
+      "rule": "Product, plan, organization, or surface differences appear under Product-specific after the shared procedure",
+      "class": "heuristic",
+      "severity": "advisory",
+      "status": "fail",
+      "location": "document",
+      "evidence": "conditional content without a Product-specific heading \u2014 tabs: ['Docker Compose', 'Helm'], markers: ['Enterprise plan', 'Organization settings']",
+      "fix": "Move plan/org/surface conditions under a Product-specific heading; keep the shared procedure unconditional."
+    },
+    {
+      "id": "T8",
+      "rule": "Security and permissions section states what access is granted and how to remove it",
+      "class": "deterministic",
+      "severity": "mandatory",
+      "status": "fail",
+      "location": "document",
+      "evidence": "page reads data / installs / handles credentials (['api key', 'credential', 'deploy', 'install', 'oauth', 'permission']) but has no 'Security and permissions' H2",
+      "fix": "Add a Security and permissions H2 that consolidates access granted, revocation, and removal."
+    },
+    {
+      "id": "T9",
+      "rule": "Troubleshooting contains a table with exactly Symptom, Check, Fix",
+      "class": "deterministic",
+      "severity": "mandatory",
+      "status": "fail",
+      "location": "document",
+      "evidence": "no 'Troubleshooting' H2",
+      "fix": "Add a Troubleshooting H2 with a Symptom | Check | Fix table."
+    },
+    {
+      "id": "T10",
+      "rule": "Exactly one H2 named Next steps; first link equals next_action; at most two more links",
+      "class": "deterministic",
+      "severity": "mandatory",
+      "status": "fail",
+      "location": "document",
+      "evidence": "0 'Next steps' H2 found",
+      "fix": "Add one Next steps H2 whose first link is next_action."
+    },
+    {
+      "id": "J1",
+      "rule": "Page helps a reader complete ONE observable job (task-contract-selected)",
+      "class": "judgment",
+      "severity": "mandatory",
+      "status": "fail",
+      "location": "document",
+      "evidence": "The page bundles at least three reader jobs. Set up (H2s 'Create a Tunnels API key', 'Deploy the tunnel stack', 'Verify the connection', 'Add tunneled servers as connectors') is one job with one outcome: a tunneled server reachable from Claude. 'Rotate credentials' is a maintain job with its own trigger (schedule or suspected exposure). 'Remove a tunnel' is a decommission job with a different reader state and an irreversible outcome. The page description confirms it: it lists six verbs.",
+      "fix": "Keep this page as 'Set up an MCP tunnel' ending at the first successful tool call; move 'Rotate credentials' and 'Remove a tunnel' to their own task pages under connectors/mcp-tunnels and link them from Next steps.",
+      "judged_by": "judgment file judgment-results.json"
+    },
+    {
+      "id": "J2",
+      "rule": "Examples do not introduce a second object, alternate workflow, or unsupported capability",
+      "class": "judgment",
+      "severity": "advisory",
+      "status": "pass",
+      "location": "examples",
+      "evidence": "Examples stay inside the one job: the 'docs' and 'search' routes, the example URL 'https://docs.abc123.tunnel.anthropic.com/mcp', and the example tunnel domain all illustrate configuring and registering a route. No example introduces a second object type or a capability the page does not otherwise support.",
+      "fix": "",
+      "judged_by": "judgment file judgment-results.json"
+    },
+    {
+      "id": "J3",
+      "rule": "Heuristic T6 findings confirmed (imperative verb / one action per step)",
+      "class": "judgment",
+      "severity": "advisory",
+      "status": "fail",
+      "location": "steps",
+      "evidence": "1 confirmed, 2 rejected. Confirmed: 'Create a Tunnels API key' step 2 'Open **Tunnels API** and create a key' has two primary actions. Rejected: step 1 (line 15) and 'Add tunneled servers as connectors' step 1 (line 135) begin with the location phrase 'In claude.ai,' before a single imperative ('go to'); the rule intends one action per step, and a leading location qualifier does not add an action. The heuristic also MISSED two real violations because it only reads <Step title> text: Helm 'Install' body reads 'Read the Tunnels API key into an environment variable ... then install into a dedicated namespace', and Docker 'Provision the tunnel' body reads 'Read the Tunnels API key into an environment variable, then run the setup component.'",
+      "fix": "Allow a leading location phrase in T6a; extend T6b to the first sentence of a <Step> body, not only its title.",
+      "judged_by": "judgment file judgment-results.json"
+    }
+  ]
+}

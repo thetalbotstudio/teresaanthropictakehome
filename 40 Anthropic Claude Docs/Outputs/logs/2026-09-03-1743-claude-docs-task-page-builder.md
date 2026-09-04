@@ -1,0 +1,22 @@
+# Execution log — claude-docs-task-page-builder v1.2
+
+- Run: 2026-09-03 17:43 PDT (2026-09-04 00:43 UTC)
+- Trigger: "run the workflow on https://claude.com/docs/connectors/custom/remote-mcp" (first run of the Step 0 URL download path)
+- Target: `Knowledge/claudedocs/Third party connectors with remote MCP.md` — https://claude.com/docs/connectors/custom/remote-mcp — full page
+- Step 0: `curl <url>.md` blocked (proxy 403) in the container and the local VM; fetched via the built-in browser. Saved `Outputs/claudedocs-checker/snapshots/connectors-custom-remote-mcp.md` (raw) and the clipping.
+- Sources: the snapshot; llms.txt (route validation); checker findings on the target (`Outputs/claudedocs-checker/out/connectors-custom-remote-mcp.findings.md`: 8 mandatory fails); Phase 2 style guide, content-type template, `Templates/doc-task-topic.md`; `Knowledge/claude-docs-audit-brief.md`
+- Gates: all QA gates passed (see record); approval-before-write not exercised — canonical page not replaced
+- Revisions: 1 draft, 1 post-QA revision (checker T9 false positive on the first table in the document; example table converted to prose); checker run 2 PASS 14/14 with in-session judgment file
+- Collision: `Third party connectors with remote MCP_AFTER.md` appeared from a parallel session at 17:49 PDT. Teresa's instruction: save this run as `_BEFORECLAUDE` / `_AFTERCLAUDE`; the other file was not read or modified.
+- Approval state: draft, awaiting user review
+- Saved paths:
+  - `Workflows/workflow-claude-docs-task-page-builder.md` (v1.1 → v1.2: Step 0, `target-downloaded` gate, `url-target` context, new trigger) and `Workflows/workflows.md` (trigger)
+  - `Outputs/claudedocs-checker/snapshots/connectors-custom-remote-mcp.md`
+  - `Knowledge/claudedocs/Third party connectors with remote MCP.md`
+  - `Knowledge/claudedocs/Third party connectors with remote MCP_BEFORECLAUDE.md` (byte copy)
+  - `Knowledge/claudedocs/Third party connectors with remote MCP_AFTERCLAUDE.md`
+  - `Outputs/claudedocs-checker/out/connectors-custom-remote-mcp.findings.{md,json}` (target) and `Outputs/claudedocs-checker/out-afterclaude/` (draft, incl. `judgment-results.json`)
+  - `Outputs/connectors-custom-remote-mcp_beforeAfter.md`
+  - `Outputs/logs/2026-09-03-1743-claude-docs-task-page-builder.md`
+- Final verification: first and last sections of each saved file re-read; front matter complete; one `Next steps` H2 whose first link equals `next_action`; all internal routes present in llms.txt; checker exit 0
+- Unresolved: `owner_team` convention; two admin paths in source; `next_action` not linked from the source page; checker T9 first-table defect

@@ -1,0 +1,172 @@
+{
+  "meta": {
+    "url": "https://claude.com/docs/connectors/custom/remote-mcp",
+    "source": "local file ../../Knowledge/claudedocs/Third party connectors with remote MCP_AFTERCLAUDE.md",
+    "run_at": "2026-09-04T00:57:15+00:00",
+    "checker_version": "0.1.0",
+    "standard": "TeresaTalbot_Phase2_01StyleGuideExcerpt.md",
+    "front_matter": {
+      "content_type": "task",
+      "object_type": "connector",
+      "owner_team": "Docs Platform",
+      "supported_surfaces": "[claude.ai]",
+      "status": "current",
+      "last_reviewed": "2026-09-03",
+      "canonical_url": "https://claude.com/docs/connectors/custom/remote-mcp",
+      "next_action": "https://claude.com/docs/connectors/building/troubleshooting"
+    },
+    "stats": {
+      "headings": 9,
+      "steps": 21,
+      "tabs": [],
+      "callouts": 0,
+      "code_blocks_removed": 0
+    }
+  },
+  "findings": [
+    {
+      "id": "T1a",
+      "rule": "H1 is 70 characters or fewer",
+      "class": "deterministic",
+      "severity": "mandatory",
+      "status": "pass",
+      "location": "line 2",
+      "evidence": "46 chars: 'Add a custom connector for a remote MCP server'",
+      "fix": "Shorten the H1 to one imperative verb and one object."
+    },
+    {
+      "id": "T1b",
+      "rule": "H1 begins with an imperative verb",
+      "class": "heuristic",
+      "severity": "mandatory",
+      "status": "pass",
+      "location": "line 2",
+      "evidence": "first word 'add'",
+      "fix": "Start the H1 with the verb that names the job."
+    },
+    {
+      "id": "T2a",
+      "rule": "First paragraph is 45 words or fewer",
+      "class": "deterministic",
+      "severity": "mandatory",
+      "status": "pass",
+      "location": "first paragraph after H1",
+      "evidence": "33 words: 'After this task, a remote MCP server of your choosing is registered in Claude as a custom connector, its sign-in method is set, and its tools can be turned on i'\u2026",
+      "fix": "Open with one paragraph of 45 words or fewer that states the observable result."
+    },
+    {
+      "id": "T2b",
+      "rule": "First paragraph describes the observable result",
+      "class": "judgment",
+      "severity": "mandatory",
+      "status": "pass",
+      "location": "first paragraph after H1",
+      "evidence": "'After this task, a remote MCP server of your choosing is registered in Claude as a custom connector, its sign-in method is set, and its tools can be turned on in a conversation.' States the end state, not coverage.",
+      "fix": "",
+      "judged_by": "judgment file judgment-results.json"
+    },
+    {
+      "id": "T3",
+      "rule": "Front matter contains exactly one value for each required key",
+      "class": "deterministic",
+      "severity": "mandatory",
+      "status": "pass",
+      "location": "front matter",
+      "evidence": "missing: []",
+      "fix": "Add typed front matter: content_type, object_type, owner_team, supported_surfaces, status, last_reviewed, canonical_url, next_action."
+    },
+    {
+      "id": "T4",
+      "rule": "At a glance block has exactly Audience, Prerequisites, Outcome",
+      "class": "deterministic",
+      "severity": "mandatory",
+      "status": "pass",
+      "location": "At a glance block",
+      "evidence": "fields: ['Audience', 'Prerequisites', 'Outcome']",
+      "fix": "Use exactly the three fields, in order."
+    },
+    {
+      "id": "T5",
+      "rule": "Before you begin appears before the first numbered procedure",
+      "class": "deterministic",
+      "severity": "mandatory",
+      "status": "pass",
+      "location": "line 11",
+      "evidence": "Before you begin at 11, first step at 22",
+      "fix": ""
+    },
+    {
+      "id": "T7",
+      "rule": "Product-specific heading present",
+      "class": "deterministic",
+      "severity": "advisory",
+      "status": "pass",
+      "location": "line 60",
+      "evidence": "Product-specific",
+      "fix": ""
+    },
+    {
+      "id": "T8",
+      "rule": "Security and permissions section present",
+      "class": "deterministic",
+      "severity": "mandatory",
+      "status": "pass",
+      "location": "line 67",
+      "evidence": "",
+      "fix": ""
+    },
+    {
+      "id": "T9",
+      "rule": "Troubleshooting table has exactly Symptom, Check, Fix and every row is complete",
+      "class": "deterministic",
+      "severity": "mandatory",
+      "status": "pass",
+      "location": "line 79",
+      "evidence": "columns: ['Symptom', 'Check', 'Fix']; incomplete rows: 0",
+      "fix": ""
+    },
+    {
+      "id": "T10",
+      "rule": "Next steps: first link equals next_action; at most two more links",
+      "class": "deterministic",
+      "severity": "mandatory",
+      "status": "pass",
+      "location": "line 92",
+      "evidence": "links: ['https://claude.com/docs/connectors/building/troubleshooting', 'https://claude.com/docs/connectors/building/authentication', 'https://claude.com/docs/connectors/directory']; next_action: https://claude.com/docs/connectors/building/troubleshooting",
+      "fix": ""
+    },
+    {
+      "id": "J1",
+      "rule": "Page helps a reader complete ONE observable job (task-contract-selected)",
+      "class": "judgment",
+      "severity": "mandatory",
+      "status": "pass",
+      "location": "document",
+      "evidence": "H2s 'Add the connector' and 'Connect and turn on the connector' are two halves of one job (a custom connector that is usable in chat); 'Add a request header' is a conditional sub-procedure inside the same dialog. Concept content (what connectors are, finding connectors), field reference, and management moved out or into Security and permissions.",
+      "fix": "",
+      "judged_by": "judgment file judgment-results.json"
+    },
+    {
+      "id": "J2",
+      "rule": "Examples do not introduce a second object, alternate workflow, or unsupported capability",
+      "class": "judgment",
+      "severity": "advisory",
+      "status": "pass",
+      "location": "examples",
+      "evidence": "Examples are the URL 'https://mcp.example.com/mcp' and the 'Bearer your-token' header value; both illustrate fields the reader fills in for this job. No second object or alternate workflow.",
+      "fix": "",
+      "judged_by": "judgment file judgment-results.json"
+    },
+    {
+      "id": "J3",
+      "rule": "Heuristic T6 findings confirmed (imperative verb / one action per step)",
+      "class": "judgment",
+      "severity": "advisory",
+      "status": "pass",
+      "location": "steps",
+      "evidence": "0 confirmed, 0 rejected; no T6 flags were raised.",
+      "fix": "",
+      "judged_by": "judgment file judgment-results.json"
+    }
+  ]
+}
